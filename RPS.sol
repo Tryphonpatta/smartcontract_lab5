@@ -3,7 +3,12 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
+import "./TimeUnit.sol";
+import "./CommitReveal.sol";
 contract RPS {
+    TimeUnit public timeUnit;
+    CommitReveal public commitReveal;
+
     uint public numPlayer = 0;
     uint public reward = 0;
     mapping (address => uint) public player_choice; // 0 - Scissors, 1 - Paper , 2 - Rock, 3 - Lizard, 4 - Spock
@@ -12,7 +17,11 @@ contract RPS {
 	address[] public allowPlayers = [0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2,0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db,0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB];
 
     uint public numInput = 0;
-
+    uint public timeLimit = 300; 
+    constructor(address _timeUnit, address _commitReveal){
+        timeUnit = TimeUnit(_timeUnit);
+        commitReveal = CommitReveal(_commitReveal);
+    }
     function addPlayer() public payable {
         require(numPlayer < 2);
         if (numPlayer > 0) {
@@ -26,6 +35,10 @@ contract RPS {
         player_not_played[msg.sender] = true;
         players.push(msg.sender);
         numPlayer++;
+        //set time
+        if(numPlayer == 1){
+            timeUnit.setStartTime();
+        }
     }
 
     function input(uint choice) public  {
@@ -58,5 +71,25 @@ contract RPS {
             account0.transfer(reward / 2);
             account1.transfer(reward / 2);
         }
+    }
+
+    function cancelGame() public {
+        if(numPlayer == 1 && timeUnit.elapsedSeconds() >= timeLimit){
+            address payable  account = payable(players[0]);
+            account.transfer(reward);
+        }
+        else if (numPlayer == 2 && numInput == 1 && timeUnit.elapsedSeconds() >= timeLimit) {
+            address payable account1 = payable(players[0]);
+            address payable account2 = payable(players[1]);
+            account1.transfer(reward/2);
+            account2.transfer(reward/2);
+        }
+        reset();
+    }
+
+    function reset() private {
+        reward = 0;
+        delete players;
+        numPlayer = 0;
     }
 }
