@@ -97,7 +97,7 @@ contract RPS {
             address payable  account = payable(players[0]);
             account.transfer(reward);
         }
-        else if (numPlayer == 2 && numReveal == 0){
+        else if (numPlayer == 2 && numReveal == 0 && timeUnit.elapsedSeconds() >= timeLimit){
             address payable account1 = payable(players[0]);
             address payable account2 = payable(players[1]);
             account1.transfer(reward/2);

@@ -257,19 +257,19 @@
 	},
 	"sources": {
 		"CommitReveal.sol": {
-			"keccak256": "0x3394f032e8b9a4a6c435bd2818820fdc0c4d29e3ee62ce932dfae64e037bbdf9",
+			"keccak256": "0xff098fdd3368481ad8908f02cd2bf66aa72962558e2e55f8d9d0d3bac5cfdbc9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://872c663abfde26b04a931eeb1770188395a2e869ff3ead3336950b115d079e02",
-				"dweb:/ipfs/QmTaXxqiCMSVw71pmLX1UuhbgQ5rAPRBeut3DhsRAePTUu"
+				"bzz-raw://5d0c6c7b6ac33f1af3d08cbab48115cc6ac013f51ffc0eab4a3281840ec265c9",
+				"dweb:/ipfs/QmXmumARp8gSUXtYYxZoVTAVN2YTFGyJi9kFRMvF4BCwXT"
 			]
 		},
 		"RPS.sol": {
-			"keccak256": "0x14d6c4534bce7a11a9c5a58a5fb2d3b75d6ae99c1ea13326841b87414bc7436e",
+			"keccak256": "0x2197cd840198f43b7f9742c323432b98ec8d805f8071f283cb43172b57a59f36",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://dfdac7dd40e9f30ee8d1a85e20ac90cd134d6e9973f18591a5cdb2a7bd518d4a",
-				"dweb:/ipfs/QmVfNWRTjtuDvnJdZE5fhvMghNQFx6w5Ac4ayYEH6nQjLF"
+				"bzz-raw://f9add46a27e0b2f24729e4569bccd32aa7e3d51bdbb708aa85d4a6d2f3a1aacf",
+				"dweb:/ipfs/QmZHghdDPytt4X9HKWFzFAst52jAJZ6M9BaujrdQZbz8Ke"
 			]
 		},
 		"TimeUnit.sol": {
