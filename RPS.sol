@@ -63,6 +63,7 @@ contract RPS {
         require(numInput == 2);
         commitReveal.reveal(hash,msg.sender);
         uint choice = uint(uint8(hash[31]));
+        require(choice >= 0 && choice <= 4, "choice is not valid.");
         player_choice[msg.sender] = choice;
         numReveal ++;
         if(numReveal == 2){
