@@ -61,6 +61,11 @@
 						"internalType": "bytes32",
 						"name": "dataHash",
 						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
 					}
 				],
 				"name": "commit",
@@ -135,6 +140,11 @@
 						"internalType": "bytes32",
 						"name": "revealHash",
 						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
 					}
 				],
 				"name": "reveal",
@@ -156,7 +166,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"commit.sol": "CommitReveal"
+			"CommitReveal.sol": "CommitReveal"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -170,12 +180,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"commit.sol": {
-			"keccak256": "0x3394f032e8b9a4a6c435bd2818820fdc0c4d29e3ee62ce932dfae64e037bbdf9",
+		"CommitReveal.sol": {
+			"keccak256": "0xff098fdd3368481ad8908f02cd2bf66aa72962558e2e55f8d9d0d3bac5cfdbc9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://872c663abfde26b04a931eeb1770188395a2e869ff3ead3336950b115d079e02",
-				"dweb:/ipfs/QmTaXxqiCMSVw71pmLX1UuhbgQ5rAPRBeut3DhsRAePTUu"
+				"bzz-raw://5d0c6c7b6ac33f1af3d08cbab48115cc6ac013f51ffc0eab4a3281840ec265c9",
+				"dweb:/ipfs/QmXmumARp8gSUXtYYxZoVTAVN2YTFGyJi9kFRMvF4BCwXT"
 			]
 		}
 	},
